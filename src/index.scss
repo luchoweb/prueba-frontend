@@ -7,6 +7,8 @@
   --color-gray: #afafaf;
   --color-error: #d32f2f;
   --color-error-light: #e57373;
+
+  --header-height: 70px;
 }
 
 body {
@@ -32,21 +34,6 @@ h6,
 b,
 strong {
   font-weight: 600;
-}
-
-.layout {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  &__container {
-    width: 100%;
-  
-    @media (min-width: 1024px) {
-      width: 980px;
-    }
-  }
 }
 
 .btn {

@@ -7,7 +7,7 @@ const Header = () => {
   const { VITE_APP_NAME: appName } = import.meta.env;
 
   return (
-    <header className="pt-3 pb-3">
+    <header className="d-flex align-items-center">
       <div className="container">
         <Link to="/" className="logo">
           <img src={Logo} alt={`Logo de ${appName}`} height={37} />

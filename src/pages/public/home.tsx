@@ -1,9 +1,10 @@
+import HomeHero from "../../components/HomeHero";
 import Layout from "../layout";
 
 const HomePage = () => {
   return (
-    <Layout customClassName="pt-3 pb-4">
-      <p>HOME</p>
+    <Layout customClassName="pb-4">
+      <HomeHero />
     </Layout>
   );
 }

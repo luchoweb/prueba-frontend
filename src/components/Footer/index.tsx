@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+
 import "./styles.scss";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const { VITE_APP_NAME: appName } = import.meta.env;
 
   return (
@@ -11,7 +14,7 @@ const Footer = () => {
           <small>&copy; {`${new Date().getFullYear()} ${appName}`}</small>
         </p>
         <Link to="/admin" className="footer__link">
-          <small>Acceso</small>
+          <small>{t("access")}</small>
         </Link>
       </div>
     </footer>
