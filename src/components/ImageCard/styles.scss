@@ -1,5 +1,6 @@
 .image-card {
   background-color: var(--color-light);
+  border: 1px solid var(--color-gray-light);
   border-radius: 0.5rem;
   overflow: hidden;
 
@@ -59,20 +60,7 @@
       width: 100%;
     }
 
-    &::after {
-      background: rgb(0, 0, 0);
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      top: 75%;
-    }
+    
   }
 
   &__btn-like {
@@ -85,7 +73,7 @@
     grid-column-start: 1;
     height: 40px;
     padding: 0 0 0 .7rem;
-    text-shadow: 0 0 5px var(--color-text);
+    text-shadow: 0 0 5px var(--color-gray);
     transition: all 200ms ease-in-out;
     width: 40px;
     z-index: 2;

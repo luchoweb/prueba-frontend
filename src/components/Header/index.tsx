@@ -1,18 +1,11 @@
-import { Link } from "react-router-dom";
-
-import Logo from "../../assets/logo.png";
+import AppLogo from "../Logo";
 import "./styles.scss";
 
 const Header = () => {
-  const { VITE_APP_NAME: appName } = import.meta.env;
-
   return (
     <header className="d-flex align-items-center">
       <div className="container">
-        <Link to="/" className="logo">
-          <img src={Logo} alt={`Logo de ${appName}`} height={37} />
-          <small className="ms-2">{appName}</small>
-        </Link>
+        <AppLogo />
       </div>
     </header>
   );

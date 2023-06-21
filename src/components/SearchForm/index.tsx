@@ -28,10 +28,6 @@ const SearchForm = () => {
           {t("search-form-btn")}
         </button>
       </div>
-
-      <p className="m-0 mt-3 mb-3 mb-lg-0 home-hero__disclaimer">
-        Powered by Google&reg; Images API
-      </p>
     </>
   );
 };

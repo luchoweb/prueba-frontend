@@ -8,7 +8,7 @@ type Props = {
 };
 
 import DefaultAvatar from "../../assets/default-avatar.jpeg";
-import DefaultImage from "../../assets/default-image.jpg";
+import DefaultImage from "../../assets/default-image.svg";
 import "./styles.scss";
 
 const ImageCard = ({ vendor, index, image = "" }: Props) => {
@@ -20,7 +20,7 @@ const ImageCard = ({ vendor, index, image = "" }: Props) => {
     (event.target.src = DefaultImage);
 
   useEffect(() => {
-    const images = document.querySelectorAll(".image-card__img");
+    const images = document.querySelectorAll(".image-card__image");
     images.forEach((image, index) => {
       const bigHeart = document.querySelector(`#big-heart-${index}`);
       image?.addEventListener("dblclick", () => {
@@ -38,14 +38,16 @@ const ImageCard = ({ vendor, index, image = "" }: Props) => {
       <div className="image-card__author ps-2 d-flex align-items-center">
         <picture className="author__avatar me-2">
           <img
-            src={`${avatarUrl}/80?img=${vendor.avatar}`}
+            src={`${avatarUrl}/70?img=${vendor.avatar}`}
             alt={vendor.name}
             onError={showDefaultAvatar}
-            height={40}
+            height={35}
           />
         </picture>
 
-        <p className="m-0 author__name">{vendor.name}</p>
+        <p className="m-0 author__name">
+          <small>{vendor.name}</small>
+        </p>
       </div>
 
       <div className="image-card__image mt-2">

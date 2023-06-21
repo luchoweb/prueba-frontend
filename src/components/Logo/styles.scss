@@ -1,0 +1,8 @@
+.logo {
+  color: var(--color-text);
+  text-decoration: none;
+
+  &--light {
+    color: var(--color-white);
+  }
+}

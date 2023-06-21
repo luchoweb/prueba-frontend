@@ -58,4 +58,14 @@ strong {
     background-color: var(--color-error);
     color: var(--color-white);
   }
+
+  &--dark {
+    background-color: var(--color-text);
+    color: var(--color-white);
+  }
+}
+
+.link {
+  color: var(--color-text);
+  text-decoration: none;
 }
