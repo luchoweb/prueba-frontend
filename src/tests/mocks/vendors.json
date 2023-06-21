@@ -1,18 +1,22 @@
 [
   {
+    "avatar": 1,
     "id": 1,
-    "name": "Vendedor #1"
+    "name": "Ana Fotos"
   },
   {
+    "avatar": 67,
     "id": 2,
-    "name": "Vendedor #2"
+    "name": "Lucho El Viajero"
   },
   {
+    "avatar": 49,
     "id": 3,
-    "name": "Vendedor #3"
+    "name": "Lily Pics"
   },
   {
+    "avatar": 58,
     "id": 4,
-    "name": "Vendedor #4"
+    "name": "Sebas Ruiz"
   }
 ]

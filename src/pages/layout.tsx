@@ -12,7 +12,9 @@ const Layout = ({ children, customClassName }: Props) => {
     <main className="layout">
       <div className="layout__container">
         <Header />
-        <section className={`${customClassName || ""}`}>{children}</section>
+        <section className={`${customClassName || ""}`}>
+          <div className="container">{children}</div>
+        </section>
         <Footer />
       </div>
     </main>

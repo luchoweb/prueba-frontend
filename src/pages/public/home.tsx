@@ -2,8 +2,8 @@ import Layout from "../layout";
 
 const HomePage = () => {
   return (
-    <Layout>
-      <p>Home</p>
+    <Layout customClassName="pt-3 pb-4">
+      <p>HOME</p>
     </Layout>
   );
 }

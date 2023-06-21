@@ -1,4 +1,7 @@
-footer {
-  border-top: 1px solid var(--color-gray-light);
+.footer {
   text-align: center;
+
+  &__link {
+    color: var(--color-text);
+  }
 }

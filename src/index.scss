@@ -4,6 +4,7 @@
   --color-light: #f9f9f9;
   --color-white: #ffffff;
   --color-gray-light: #e9e9e9;
+  --color-gray: #afafaf;
   --color-error: #d32f2f;
   --color-error-light: #e57373;
 }
@@ -33,10 +34,6 @@ strong {
   font-weight: 600;
 }
 
-small {
-  font-size: .8rem;
-}
-
 .layout {
   align-items: center;
   display: flex;
@@ -44,25 +41,33 @@ small {
   justify-content: center;
 
   &__container {
-    width: 96%;
+    width: 100%;
   
-    @media (min-width: 900px) {
-      width: 800px;
+    @media (min-width: 1024px) {
+      width: 980px;
     }
   }
 }
 
 .btn {
+  border-radius: .2rem;
+  font-weight: 600;
+  line-height: 1.5rem;
   padding: .3rem .5rem;
   text-decoration: none;
   transition: all .2s ease-in-out;
 
+  &:hover {
+    opacity: .7;
+  }
+
   &--blue {
     background-color: var(--color-blue);
     color: var(--color-white);
+  }
 
-    &:hover {
-      opacity: .7;
-    }
+  &--red {
+    background-color: var(--color-error);
+    color: var(--color-white);
   }
 }

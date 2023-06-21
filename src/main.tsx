@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./pages/public/home";
+import ImagesPage from "./pages/public/images";
 
 import "bootstrap/dist/css/bootstrap-reboot.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "/images/:query",
+    element: <ImagesPage />
   },
   {
     path: "*",
