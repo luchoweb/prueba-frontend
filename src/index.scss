@@ -1,0 +1,22 @@
+body {
+  color: var(--bs-dark);
+  font-family: Poppins, sans-serif;
+  font-weight: 200;
+  font-synthesis: none;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-weight: 600;
+}
