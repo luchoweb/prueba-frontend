@@ -7,7 +7,7 @@
     margin-bottom: 2rem;
   }
 
-  &__photo {
+  &__image {
     cursor: pointer;
     display: grid;
     grid-template-columns: 1fr;
@@ -42,7 +42,7 @@
   }
 }
 
-.photo {
+.image {
   &__container {
     display: block;
     height: 300px;

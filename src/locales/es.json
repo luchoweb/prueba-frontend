@@ -1,6 +1,6 @@
 {
   "hero-title": "Encuentra aquí las mejores imágenes del mundo",
   "hero-text": "Ingrese una palabra clave en el siguiente formulario y listo",
-  "hero-input-placeholder": "montañas, flores, animales, etc...",
-  "access": "acceso"
+  "search-form-placeholder": "montañas, flores, animales, etc...",
+  "search-form-btn": "buscar"
 }

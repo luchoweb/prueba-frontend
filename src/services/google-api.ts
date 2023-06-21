@@ -1,4 +1,4 @@
-export const searchImages = async (query: string, index: number) => {
+export const searchImages = async (query: string) => {
   try {
     const { VITE_APP_GOOGLE_CSE_ID, VITE_APP_GOOGLE_API_KEY } = import.meta.env;
 
@@ -12,8 +12,9 @@ export const searchImages = async (query: string, index: number) => {
 
     const result = await response.json();
 
-    return result.items[index] || {};
+    return result.items || [];
   } catch(err) {
     //console.error(err);
+    return [];
   }
 };

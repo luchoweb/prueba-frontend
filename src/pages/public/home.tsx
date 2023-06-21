@@ -3,7 +3,7 @@ import Layout from "../layout";
 
 const HomePage = () => {
   return (
-    <Layout customClassName="pb-4">
+    <Layout>
       <HomeHero />
     </Layout>
   );

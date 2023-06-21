@@ -8,14 +8,11 @@ const Footer = () => {
   const { VITE_APP_NAME: appName } = import.meta.env;
 
   return (
-    <footer className="footer pt-1 pb-2">
+    <footer className="footer pt-3 pb-3">
       <div className="container">
         <p className="m-0">
           <small>&copy; {`${new Date().getFullYear()} ${appName}`}</small>
         </p>
-        <Link to="/admin" className="footer__link">
-          <small>{t("access")}</small>
-        </Link>
       </div>
     </footer>
   );
