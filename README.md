@@ -26,17 +26,17 @@
 
 Y listo, con estos pasos será suficiente para poder correr la prueba localmente.
 
-#### Pruebas unitarias
+### Pruebas unitarias
 
 Agregamos algunas pruebas unitarias, por favor ejecute:
 ```bash
 npm run test
 ```
 
-#### Enlace a servidor
+### Enlace a servidor
 
 Enlace a la prueba desplegada en servidor: https://alegra.luchoweb.dev
 
-#### Importante
+### Importante
 
 (1) *Los valores reales de las variables de entorno serán enviadas en el correo electrónico de finalización de la prueba.*
