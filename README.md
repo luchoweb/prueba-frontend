@@ -35,7 +35,7 @@ npm run test
 
 ### Enlace a servidor
 
-Enlace a la prueba desplegada en servidor: https://alegra.luchoweb.dev
+Enlace a la prueba desplegada en servidor: https://prueba-alegra.netlify.app
 
 ### Importante
 
