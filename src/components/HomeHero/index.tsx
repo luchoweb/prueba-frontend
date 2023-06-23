@@ -13,11 +13,9 @@ const HomeHero = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-md-7 home-hero__content pb-0 pb-md-4 pb-lg-0">
-            <h1 className="mb-4">¡{t("hero-title")}!</h1>
+            <h1 className="mb-4">{t("hero-title")}...</h1>
 
-            <p className="m-0 mb-4">
-              {t("hero-text")}.
-            </p>
+            <p className="m-0 mb-4">{t("hero-text")}.</p>
 
             <SearchForm />
           </div>

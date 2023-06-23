@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { VendorProps } from "../../types";
+import { Seller } from "../../types";
 
 type Props = {
-  vendor: VendorProps;
+  seller: Seller;
   index: number;
   image?: string;
 };
@@ -11,7 +11,7 @@ import DefaultAvatar from "../../assets/default-avatar.jpeg";
 import DefaultImage from "../../assets/default-image.svg";
 import "./styles.scss";
 
-const ImageCard = ({ vendor, index, image = "" }: Props) => {
+const ImageCard = ({ seller, index, image = "" }: Props) => {
   const { VITE_APP_AVATAR_URL: avatarUrl } = import.meta.env;
   const showDefaultAvatar = (event: React.ChangeEvent<HTMLImageElement>) =>
     (event.target.src = DefaultAvatar);
@@ -38,15 +38,15 @@ const ImageCard = ({ vendor, index, image = "" }: Props) => {
       <div className="image-card__author ps-2 d-flex align-items-center">
         <picture className="author__avatar me-2">
           <img
-            src={`${avatarUrl}/70?img=${vendor.avatar}`}
-            alt={vendor.name}
+            src={`${avatarUrl}/70?img=${seller.id}`}
+            alt={seller.name}
             onError={showDefaultAvatar}
             height={35}
           />
         </picture>
 
         <p className="m-0 author__name">
-          <small>{vendor.name}</small>
+          <small>{seller.name}</small>
         </p>
       </div>
 

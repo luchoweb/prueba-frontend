@@ -4,28 +4,34 @@ import { useTranslation } from "react-i18next";
 import { Instagram } from "react-content-loader";
 
 import { searchImages } from "../../services/api-images";
+import { getSellers } from "../../services/api-alegra";
+
+import { Sellers } from "../../types";
 
 import ImageCard from "../../components/ImageCard";
 import Layout from "../layout";
 
-import Vendors from "../../tests/mocks/vendors.json";
-
 const ImagesPage = () => {
   const { query = "flores" } = useParams();
   const { t } = useTranslation();
+  const skeletons = [1,2,3,4];
   const [images, setImages] = useState([]);
+  const [sellers, setSellers] = useState<Array<Sellers>>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const getPhotos = async () => {
-      const response = await searchImages(query);
-      if (response?.photos?.length) {
-        setImages(response?.photos);
-        setIsLoading(false);
-      }
-    };
+    searchImages(query)
+      .then(response => {
+        if (response?.photos?.length) {
+          setImages(response?.photos);
+          setIsLoading(false);
+        }
+      })
+      .catch(console.error);
 
-    getPhotos();
+    getSellers()
+      .then(response => setSellers(response))
+      .catch(console.log);
   }, [query]);
 
   return (
@@ -44,10 +50,10 @@ const ImagesPage = () => {
 
         <div className="row">
           {isLoading ? (
-            Array.from(Vendors).map((vendor) => (
+            skeletons.map((skeleton) => (
               <div
                 className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4"
-                key={vendor.id}
+                key={skeleton}
               >
                 <Instagram />
               </div>
@@ -60,13 +66,13 @@ const ImagesPage = () => {
               </Link>
             </div>
           ) : (
-            Array.from(Vendors).map((vendor, index) => (
+            sellers?.map((seller, index) => (
               <div
                 className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4"
-                key={vendor.id}
+                key={seller.id}
               >
                 <ImageCard
-                  vendor={vendor}
+                  seller={seller}
                   image={images[index]?.src?.large}
                   index={index}
                 />
