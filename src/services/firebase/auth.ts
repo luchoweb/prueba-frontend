@@ -6,6 +6,4 @@ export const signIn = async (email: string, password: string) => {
   return result.user;
 };
 
-export const getCurrentUserId = async () => await auth.currentUser?.uid;
-
 export const logout = async () => await signOut(auth);
