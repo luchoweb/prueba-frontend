@@ -1,17 +1,12 @@
 import { useEffect } from "react";
-import { Seller } from "../../types";
-
-type Props = {
-  seller: Seller;
-  index: number;
-  image?: string;
-};
+import { updateSellerLikes } from "../../services/api-alegra";
+import { Seller, ImageCardProps } from "../../types";
 
 import DefaultAvatar from "../../assets/default-avatar.jpeg";
 import DefaultImage from "../../assets/default-image.svg";
 import "./styles.scss";
 
-const ImageCard = ({ seller, index, image = "" }: Props) => {
+const ImageCard = ({ seller, index, image = "" }: ImageCardProps) => {
   const { VITE_APP_AVATAR_URL: avatarUrl } = import.meta.env;
   const showDefaultAvatar = (event: React.ChangeEvent<HTMLImageElement>) =>
     (event.target.src = DefaultAvatar);
@@ -19,17 +14,32 @@ const ImageCard = ({ seller, index, image = "" }: Props) => {
   const showDefaultImage = (event: React.ChangeEvent<HTMLImageElement>) =>
     (event.target.src = DefaultImage);
 
-  useEffect(() => {
-    const images = document.querySelectorAll(".image-card__image");
-    images.forEach((image, index) => {
-      const bigHeart = document.querySelector(`#big-heart-${index}`);
-      image?.addEventListener("dblclick", () => {
-        bigHeart?.classList.add("like");
+  const handleLike = ({ id, name, observations }: Seller) => {
+    const likes = observations || "0";
 
-        setTimeout(() => {
-          bigHeart?.classList.remove("like");
-        }, 1000);
+    updateSellerLikes({
+      id,
+      name,
+      observations: `${parseInt(likes) + 1}`,
+    })
+      .then(console.log)
+      .catch(console.error);
+  };
+
+  useEffect(() => {
+    const image = document.querySelector(`#image-${index}`);
+    const bigHeart = document.querySelector(`#big-heart-${index}`);
+    image?.addEventListener("dblclick", () => {
+      handleLike({
+        id: seller.id,
+        name: seller.name,
+        observations: seller.observations || "0"
       });
+
+      bigHeart?.classList.add("like");
+      setTimeout(() => {
+        bigHeart?.classList.remove("like");
+      }, 1000);
     });
   }, []);
 
@@ -50,7 +60,7 @@ const ImageCard = ({ seller, index, image = "" }: Props) => {
         </p>
       </div>
 
-      <div className="image-card__image mt-2">
+      <div className="image-card__image mt-2" id={`image-${index}`}>
         <i
           className="bi bi-heart-fill big-heart me-2"
           id={`big-heart-${index}`}
@@ -61,7 +71,14 @@ const ImageCard = ({ seller, index, image = "" }: Props) => {
         </picture>
 
         <div className="image__options">
-          <button className="image__btn image__btn-like d-flex align-items-center">
+          <button
+            className="image__btn image__btn-like d-flex align-items-center"
+            onClick={() => handleLike({
+              id: seller.id,
+              name: seller.name,
+              observations: seller.observations || "0"
+            })}
+          >
             <i className="bi bi-heart-fill me-2"></i>
             <span className="me-3">Love</span>
           </button>

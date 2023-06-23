@@ -31,7 +31,7 @@ const ImagesPage = () => {
 
     getSellers()
       .then(response => setSellers(response))
-      .catch(console.log);
+      .catch(console.error);
   }, [query]);
 
   return (

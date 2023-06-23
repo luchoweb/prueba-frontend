@@ -1,5 +1,5 @@
-import { HomeHero } from "../../components";
 import Layout from "../layout";
+import { HomeHero } from "../../components";
 
 const HomePage = () => {
   return (
@@ -7,6 +7,6 @@ const HomePage = () => {
       <HomeHero />
     </Layout>
   );
-}
+};
 
 export default HomePage;
