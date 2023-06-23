@@ -37,11 +37,13 @@ strong {
   font-weight: 600;
 }
 
-.btn {
+.button {
+  appearance: none;
+  border: none;
   border-radius: .2rem;
   font-weight: 600;
   line-height: 1.5rem;
-  padding: .3rem .5rem;
+  padding: .5rem .7rem;
   text-decoration: none;
   transition: all .2s ease-in-out;
 

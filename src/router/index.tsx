@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-
-import HomePage from "../pages/public/home";
-import ImagesPage from "../pages/public/images";
-import PrivateRoute from "../components/PrivateRoute";
+import { PrivateRoute } from "../components";
+import { HomePage, ImagesPage, LoginPage } from "../pages";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +14,10 @@ export const router = createBrowserRouter([
   {
     path: "/admin",
     element: <PrivateRoute component={<p>Admin</p>} />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
   {
     path: "*",

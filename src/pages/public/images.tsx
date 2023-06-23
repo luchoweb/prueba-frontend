@@ -6,7 +6,7 @@ import { Instagram } from "react-content-loader";
 import { searchImages } from "../../services/api-images";
 import { getSellers } from "../../services/api-alegra";
 
-import { Sellers } from "../../types";
+import { Seller } from "../../types";
 
 import ImageCard from "../../components/ImageCard";
 import Layout from "../layout";
@@ -16,7 +16,7 @@ const ImagesPage = () => {
   const { t } = useTranslation();
   const skeletons = [1,2,3,4];
   const [images, setImages] = useState([]);
-  const [sellers, setSellers] = useState<Array<Sellers>>();
+  const [sellers, setSellers] = useState<Array<Seller>>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const ImagesPage = () => {
             <h5 className="m-0">{`${t("search-results-title")}: "${query}"`}</h5>
           </div>
           <div className="col-6 d-flex justify-content-end">
-            <Link to="/" className="btn btn--dark">
+            <Link to="/" className="button button--dark">
               {t("search-again")}
             </Link>
           </div>
@@ -61,7 +61,7 @@ const ImagesPage = () => {
           ) : !isLoading && !images[0] ? (
             <div className="col-12 pb-5">
               <p className="m-0">{t("search-results-no-images")}.</p>
-              <Link to="/" className="btn btn--dark mt-4 d-inline-block">
+              <Link to="/" className="button button--dark mt-4 d-inline-block">
                 {t("back")}
               </Link>
             </div>

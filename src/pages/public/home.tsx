@@ -1,4 +1,4 @@
-import HomeHero from "../../components/HomeHero";
+import { HomeHero } from "../../components";
 import Layout from "../layout";
 
 const HomePage = () => {

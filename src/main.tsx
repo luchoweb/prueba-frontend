@@ -7,8 +7,7 @@ import { router } from "./router";
 
 import esTranslation from "./locales/es.json";
 
-import "bootstrap/dist/css/bootstrap-reboot.min.css";
-import "bootstrap/dist/css/bootstrap-grid.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "./index.scss";
 
