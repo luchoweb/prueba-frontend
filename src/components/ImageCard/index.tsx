@@ -60,9 +60,17 @@ const ImageCard = ({ seller, index, image = "" }: Props) => {
           <img src={image} alt="image" onError={showDefaultImage} />
         </picture>
 
-        <button className="image__btn-like d-flex align-items-center">
-          <i className="bi bi-heart-fill me-2"></i>
-        </button>
+        <div className="image__options">
+          <button className="image__btn image__btn-like d-flex align-items-center">
+            <i className="bi bi-heart-fill me-2"></i>
+            <span className="me-3">Love</span>
+          </button>
+
+          <button className="image__btn">
+            <i className="bi bi-cash me-2"></i>
+            <span>Comprar</span>
+          </button>
+        </div>
       </div>
     </div>
   );
