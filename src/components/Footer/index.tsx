@@ -15,13 +15,12 @@ const Footer = () => {
         <div className="row">
           <div className="col-12 col-lg-6 mb-4 mb-lg-0">
             <AppLogo theme="light" />
-            <p className="mt-3 mb-2 pe-2">
-              <strong>Somos la mejor empresa del mundo.</strong> Nuestros vendedores son los mejores en lo que hacen. Es por eso que te sorprenderemos siempre con las mejores imágenes.</p>
+            <p className="mt-3 mb-2 pe-2">{t("footer-about")}</p>
           </div>
 
           <div className="col-12 col-md-6 col-lg-4 mb-4 mb-md-0">
-            <h5 className="mb-3">De intetés</h5>
-            <p className="m-0 pe-2">Este es un reto técnico para el rol de Frontend Dev en Alegra. Se construyó con React + TypeScript, Firebase&reg; y la API de Pexels&reg;.</p>
+            <h5 className="mb-3">{t("footer-interest-title")}</h5>
+            <p className="m-0 pe-2">{t("footer-interest-text")}</p>
           </div>
 
           <div className="col-12 col-md-6 col-lg-2">

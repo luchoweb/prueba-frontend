@@ -1,11 +1,20 @@
 {
   "back": "Volver",
+  "buy": "Comprar",
+  "love": "Love",
+  "login-alert": "Verifique los datos ingresados.",
+  "email": "Email",
+  "password": "Contraseña",
+  "login": "Ingresar",
   "search-again": "Buscar de nuevo",
-  "hero-title": "Encuentre aquí las mejores imágenes del mundo",
-  "hero-text": "A continuación ingrese una palabra de lo que desea encontrar",
+  "hero-title": "Encuentre aquí las mejores imágenes del mundo...",
+  "hero-text": "A continuación ingrese una palabra de lo que desea encontrar:",
   "search-form-placeholder": "montañas, flores, animales, etc...",
-  "search-form-btn": "Buscar",
-  "search-results-title": "Resultados para",
-  "search-results-no-images": "No hay imagenes que coincidan con su búsqueda",
-  "footer-follow-title": "Síguenos"
+  "search": "Buscar",
+  "search-results-title": "Resultados para:",
+  "search-results-no-images": "No hay imagenes que coincidan con su búsqueda.",
+  "footer-follow-title": "Síguenos",
+  "footer-about": "Somos la mejor empresa del mundo. Nuestros vendedores son los mejores en lo que hacen. Es por eso que te sorprenderemos siempre con las mejores imágenes.",
+  "footer-interest-title": "De interés",
+  "footer-interest-text": "Este es un reto técnico para el rol de Frontend Dev en Alegra. Se construyó con React + TypeScript, Firebase&reg; y la API de Pexels&reg;."
 }

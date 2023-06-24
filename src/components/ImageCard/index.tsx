@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { updateSellerLikes } from "../../services/api-alegra";
 import { Seller, ImageCardProps } from "../../types";
 
@@ -7,6 +8,7 @@ import DefaultImage from "../../assets/default-image.svg";
 import "./styles.scss";
 
 const ImageCard = ({ seller, index, image = "" }: ImageCardProps) => {
+  const { t } = useTranslation();
   const { VITE_APP_AVATAR_URL: avatarUrl } = import.meta.env;
   const showDefaultAvatar = (event: React.ChangeEvent<HTMLImageElement>) =>
     (event.target.src = DefaultAvatar);
@@ -80,12 +82,12 @@ const ImageCard = ({ seller, index, image = "" }: ImageCardProps) => {
             })}
           >
             <i className="bi bi-heart-fill me-2"></i>
-            <span className="me-3">Love</span>
+            <span className="me-3">{t("love")}</span>
           </button>
 
           <button className="image__btn">
             <i className="bi bi-cash me-2"></i>
-            <span>Comprar</span>
+            <span>{t("buy")}</span>
           </button>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { signIn } from "../../services/firebase/auth";
 import { emailValidation } from "../../utils/regex";
@@ -8,6 +9,7 @@ import { Logo } from "..";
 import "./styles.scss";
 
 const LoginForm = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,14 +44,14 @@ const LoginForm = () => {
         <div className="alert alert-danger mt-4">
           <p className="m-0">
             <i className="bi bi-exclamation-circle me-2"></i>
-            <span>Verifique los datos ingresados.</span>
+            <span>{t("login-alert")}</span>
           </p>
         </div>
       )}
 
       <form className="form-login p-4 text-start mt-4">
         <div className="form-group mb-3">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">{t("email")}</label>
           <input
             type="email"
             id="email"
@@ -62,7 +64,7 @@ const LoginForm = () => {
         </div>
 
         <div className="form-group mb-3">
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="password">{t("password")}</label>
           <input
             type="password"
             id="password"
@@ -77,7 +79,7 @@ const LoginForm = () => {
           className="button button--dark w-100"
           onClick={(event) => handleLogin(event)}
         >
-          Ingresar
+          {t("login")}
         </button>
       </form>
     </div>

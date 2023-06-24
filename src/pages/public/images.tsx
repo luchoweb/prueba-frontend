@@ -13,7 +13,7 @@ import ImageCard from "../../components/ImageCard";
 import Layout from "../layout";
 
 const ImagesPage = () => {
-  const { query = "flores" } = useParams();
+  const { query = "flowers" } = useParams();
   const { t } = useTranslation();
   const skeletons = [1, 2, 3, 4];
   const [images, setImages] = useState<Photo[]>();
@@ -21,6 +21,10 @@ const ImagesPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    getSellers()
+      .then((response) => setSellers(response))
+      .catch(console.error);
+
     searchImages(query)
       .then((response) => {
         if (response?.photos) {
@@ -28,10 +32,6 @@ const ImagesPage = () => {
           setIsLoading(false);
         }
       })
-      .catch(console.error);
-
-    getSellers()
-      .then((response) => setSellers(response))
       .catch(console.error);
   }, [query]);
 
@@ -42,7 +42,7 @@ const ImagesPage = () => {
           <div className="col-6">
             <h5 className="m-0">{`${t(
               "search-results-title"
-            )}: "${query}"`}</h5>
+            )} "${query}"`}</h5>
           </div>
           <div className="col-6 d-flex justify-content-end">
             <Link to="/" className="button button--dark">
@@ -52,7 +52,7 @@ const ImagesPage = () => {
         </div>
 
         <div className="row">
-          {isLoading && !sellers ? (
+          {isLoading && !images?.length ? (
             skeletons.map((skeleton) => (
               <div
                 className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4"
@@ -69,7 +69,7 @@ const ImagesPage = () => {
               </Link>
             </div>
           ) : (
-            sellers?.length &&
+            !isLoading && sellers?.length &&
             images?.length &&
             sellers?.map(
               (seller, index) =>
