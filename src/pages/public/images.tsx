@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Instagram } from "react-content-loader";
-import { Photos, Photo } from "pexels";
+import { Photo } from "pexels";
 
 import { searchImages } from "../../services/api-images";
 import { getSellers } from "../../services/api-alegra";
