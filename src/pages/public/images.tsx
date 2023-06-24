@@ -50,7 +50,7 @@ const ImagesPage = () => {
         </div>
 
         <div className="row">
-          {isLoading ? (
+          {isLoading && !sellers ? (
             skeletons.map((skeleton) => (
               <div
                 className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4"
@@ -66,7 +66,7 @@ const ImagesPage = () => {
                 {t("back")}
               </Link>
             </div>
-          ) : images?.length && (
+          ) : sellers?.length && images?.length && (
             sellers?.map((seller, index) => (
               <div
                 className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4"
