@@ -25,7 +25,7 @@ const SearchForm = () => {
         />
 
         <button className="search-form__button" onClick={() => searchImages()}>
-          {t("search-form-btn")}
+          {t("search")}
         </button>
       </div>
     </>

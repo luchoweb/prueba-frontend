@@ -1,23 +1,19 @@
-import { useState, useEffect, ReactNode } from 'react';
+import { useEffect, ReactNode } from 'react';
 import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../services/firebase/firebase";
+import { useAuth } from '../../hooks';
+
 import { Loader } from '..';
 
 const PrivateRoute = (props: { component: ReactNode }) => {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoading, hasLogged } = useAuth();
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        console.log("No user logged");
-        navigate("/login");
-      }
-
-      setIsLoading(false);
-    });
-  }, []);
+    if (!isLoading && !hasLogged) {
+      console.log("No user logged");
+      navigate("/login");
+    }
+  }, [hasLogged]);
 
   return isLoading ? <Loader /> : props.component;
 };
