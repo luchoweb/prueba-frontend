@@ -1,0 +1,16 @@
+.home-hero {
+  &__image {
+    @media (min-width: 768px) {
+      align-self: flex-end;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__disclaimer {
+    font-size: .7rem;
+    text-align: center;
+  }
+}

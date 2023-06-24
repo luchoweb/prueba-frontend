@@ -1,0 +1,28 @@
+.footer {
+  background-color: var(--color-text);
+  color: var(--color-white);
+
+  &__social {
+    gap: 1rem;
+    list-style: none;
+
+    .bi {
+      color: var(--color-white);
+      font-size: 1.5rem;
+    }
+
+    .social {
+      &__link {
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
+  }
+  
+  &__copy {
+    text-align: center;
+  }
+}

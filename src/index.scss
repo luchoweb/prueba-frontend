@@ -1,9 +1,25 @@
+:root {
+  --color-text: #2a4750;
+  --color-blue: #0288d1;
+  --color-light: #f9f9f9;
+  --color-white: #ffffff;
+  --color-gray-light: #e9e9e9;
+  --color-gray: #afafaf;
+  --color-error: #d32f2f;
+  --color-error-light: #e57373;
+  --color-orange: #e95a49;
+
+  --header-height: 70px;
+}
+
 body {
-  color: var(--bs-dark);
+  color: var(--color-text);
   font-family: Poppins, sans-serif;
   font-weight: 200;
+  font-size: 1rem;
   font-synthesis: none;
   margin: 0;
+  padding: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19,4 +35,39 @@ h6,
 b,
 strong {
   font-weight: 600;
+}
+
+.button {
+  appearance: none;
+  border: none;
+  border-radius: .2rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .5rem .7rem;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    opacity: .7;
+  }
+
+  &--blue {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+  }
+
+  &--red {
+    background-color: var(--color-error);
+    color: var(--color-white);
+  }
+
+  &--dark {
+    background-color: var(--color-text);
+    color: var(--color-white);
+  }
+}
+
+.link {
+  color: var(--color-text);
+  text-decoration: none;
 }
