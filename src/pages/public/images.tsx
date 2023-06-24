@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Instagram } from "react-content-loader";
+import { Photos, Photo } from "pexels";
 
 import { searchImages } from "../../services/api-images";
 import { getSellers } from "../../services/api-alegra";
@@ -15,14 +16,14 @@ const ImagesPage = () => {
   const { query = "flores" } = useParams();
   const { t } = useTranslation();
   const skeletons = [1,2,3,4];
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<Photo[]>();
   const [sellers, setSellers] = useState<Array<Seller>>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     searchImages(query)
       .then(response => {
-        if (response?.photos?.length) {
+        if (response?.photos) {
           setImages(response?.photos);
           setIsLoading(false);
         }
@@ -58,14 +59,14 @@ const ImagesPage = () => {
                 <Instagram />
               </div>
             ))
-          ) : !isLoading && !images[0] ? (
+          ) : !isLoading && !images?.length ? (
             <div className="col-12 pb-5">
               <p className="m-0">{t("search-results-no-images")}.</p>
               <Link to="/" className="button button--dark mt-4 d-inline-block">
                 {t("back")}
               </Link>
             </div>
-          ) : (
+          ) : images?.length && (
             sellers?.map((seller, index) => (
               <div
                 className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4"
