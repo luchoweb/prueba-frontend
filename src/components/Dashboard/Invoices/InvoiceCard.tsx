@@ -1,4 +1,4 @@
-import { Invoice, InvoiceCardProps } from "../../../types";
+import { InvoiceCardProps } from "../../../types";
 
 const InvoiceCard = ({ invoice }: InvoiceCardProps) => {
   return (
