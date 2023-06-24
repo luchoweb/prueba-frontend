@@ -8,8 +8,7 @@ const useAuth = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) setHasLogged(true);
-
+      setHasLogged(user ? true : false);
       setIsLoading(false);
     });
   }, []);

@@ -3,18 +3,13 @@ import { useTranslation } from "react-i18next";
 import { updateSellerLikes } from "../../services/api-alegra";
 import { Seller, ImageCardProps } from "../../types";
 
-import DefaultAvatar from "../../assets/default-avatar.jpeg";
-import DefaultImage from "../../assets/default-image.svg";
+import { Avatar } from "..";
+import { showDefaultImage } from "../../utils/defaultImages";
+
 import "./styles.scss";
 
 const ImageCard = ({ seller, index, image = "" }: ImageCardProps) => {
   const { t } = useTranslation();
-  const { VITE_APP_AVATAR_URL: avatarUrl } = import.meta.env;
-  const showDefaultAvatar = (event: React.ChangeEvent<HTMLImageElement>) =>
-    (event.target.src = DefaultAvatar);
-
-  const showDefaultImage = (event: React.ChangeEvent<HTMLImageElement>) =>
-    (event.target.src = DefaultImage);
 
   const handleLike = ({ id, name, observations }: Seller) => {
     const likes = observations || "0";
@@ -49,12 +44,7 @@ const ImageCard = ({ seller, index, image = "" }: ImageCardProps) => {
     <div className="image-card pt-2">
       <div className="image-card__author ps-2 d-flex align-items-center">
         <picture className="author__avatar me-2">
-          <img
-            src={`${avatarUrl}/70?img=${seller.id}`}
-            alt={seller.name}
-            onError={showDefaultAvatar}
-            height={35}
-          />
+          <Avatar height={35} seller={seller} />
         </picture>
 
         <p className="m-0 author__name">

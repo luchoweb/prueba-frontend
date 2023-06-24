@@ -4,7 +4,8 @@
   "love": "Love",
   "email": "Email",
   "password": "Password",
-  "login": "Log In",
+  "login": "Login",
+  "logout": "Logout",
   "login-alert": "Check your login information.",
   "search-again": "Search again",
   "hero-title": "Find here the best images of the world...",
@@ -16,5 +17,11 @@
   "footer-follow-title": "Follow us",
   "footer-about": "We are the best company in the world. Our vendors are the best at what they do. That is why we will always surprise you with the best images.",
   "footer-interest-title": "Important",
-  "footer-interest-text": "This is a technical challenge for the Frontend Dev role at Alegra. It was built with React + TypeScript, Firebase&reg; and the Pexels API&reg;."
+  "footer-interest-text": "This is a technical challenge for the Frontend Dev role at Alegra. It was built with React + TypeScript, Firebase and the Pexels API.",
+  "sellers": "Sellers",
+  "seller": "Seller",
+  "dashboard-title": "Dashboard",
+  "invoices": "Invoices",
+  "invoice": "Invoice",
+  "loading": "Loading"
 }

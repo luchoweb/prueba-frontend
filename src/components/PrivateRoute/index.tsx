@@ -13,7 +13,7 @@ const PrivateRoute = (props: { component: ReactNode }) => {
       console.log("No user logged");
       navigate("/login");
     }
-  }, [isLoading, hasLogged]);
+  }, [hasLogged]);
 
   return isLoading ? <Loader /> : props.component;
 };

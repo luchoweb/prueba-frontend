@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
+import { AppLogoProps } from "../../types";
+
 import Logo from "../../assets/logo.png";
 import "./styles.scss";
 
-const AppLogo = ({ theme = "dark" }) => {
+const AppLogo = ({ theme = "dark" }: AppLogoProps) => {
   const { VITE_APP_NAME: appName } = import.meta.env;
 
   return (

@@ -10,9 +10,9 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (!isLoading && hasLogged) navigate("/admin");
-  }, [isLoading]);
+  }, [hasLogged]);
 
-  return isLoading || !hasLogged ? <Loader /> : (
+  return isLoading ? <Loader /> : (
     <div className="container">
       <section className="login text-center">
         <LoginForm />
