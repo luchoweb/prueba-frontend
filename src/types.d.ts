@@ -6,6 +6,14 @@ export interface Seller {
   status?: string;
 }
 
+export interface Invoice {
+  id?: string;
+  items: object[];
+  dueDate: date;
+  date: date;
+  client: object;
+}
+
 export type ImageCardProps = {
   seller: Seller;
   index: number;
@@ -24,4 +32,8 @@ export type AppLogoProps = {
 
 export type SellerCardProps = {
   seller: Seller;
+}
+
+export type InvoiceCardProps = {
+  invoice: Invoice;
 }
