@@ -15,14 +15,14 @@ import Layout from "../layout";
 const ImagesPage = () => {
   const { query = "flores" } = useParams();
   const { t } = useTranslation();
-  const skeletons = [1,2,3,4];
+  const skeletons = [1, 2, 3, 4];
   const [images, setImages] = useState<Photo[]>();
   const [sellers, setSellers] = useState<Array<Seller>>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     searchImages(query)
-      .then(response => {
+      .then((response) => {
         if (response?.photos) {
           setImages(response?.photos);
           setIsLoading(false);
@@ -31,7 +31,7 @@ const ImagesPage = () => {
       .catch(console.error);
 
     getSellers()
-      .then(response => setSellers(response))
+      .then((response) => setSellers(response))
       .catch(console.error);
   }, [query]);
 
@@ -40,7 +40,9 @@ const ImagesPage = () => {
       <div className="container">
         <div className="row align-items-center mb-4">
           <div className="col-6">
-            <h5 className="m-0">{`${t("search-results-title")}: "${query}"`}</h5>
+            <h5 className="m-0">{`${t(
+              "search-results-title"
+            )}: "${query}"`}</h5>
           </div>
           <div className="col-6 d-flex justify-content-end">
             <Link to="/" className="button button--dark">
@@ -66,19 +68,24 @@ const ImagesPage = () => {
                 {t("back")}
               </Link>
             </div>
-          ) : sellers?.length && images?.length && (
-            sellers?.map((seller, index) => (
-              <div
-                className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4"
-                key={seller.id}
-              >
-                <ImageCard
-                  seller={seller}
-                  image={images[index]?.src?.large}
-                  index={index}
-                />
-              </div>
-            ))
+          ) : (
+            sellers?.length &&
+            images?.length &&
+            sellers?.map(
+              (seller, index) =>
+                seller.status === "active" && (
+                  <div
+                    className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4"
+                    key={seller.id}
+                  >
+                    <ImageCard
+                      seller={seller}
+                      image={images[index]?.src?.large}
+                      index={index}
+                    />
+                  </div>
+                )
+            )
           )}
         </div>
       </div>
