@@ -14,12 +14,18 @@ const DashboardPage = () => {
       <hr />
       
       <section className="sellers mt-4 mb-4">
-        <h5 className="mb-4">{t("sellers")}</h5>
+        <h5 className="mb-4">
+          <i className="bi bi-people me-2"></i>
+          <span>{t("sellers")}</span>
+        </h5>
         <Sellers />
       </section>
 
       <section className="invoices">
-        <h5 className="mb-4">{t("invoices")}</h5>
+        <h5 className="mb-4">
+          <i className="bi bi-receipt me-2"></i>
+          <span>{t("invoices")}</span>
+        </h5>
         <Invoices />
       </section>
      </div>

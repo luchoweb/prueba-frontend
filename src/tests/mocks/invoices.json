@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "date": "2023-06-24",
+    "dueDate": "2023-06-24",
+    "datetime": "2023-06-24 21:58:48",
+    "observations": "",
+    "anotation": "",
+    "termsConditions": "Esta factura se asimila en todos sus efectos a una letra de cambio de conformidad con el Art. 774 del c\u00f3digo de comercio. Autorizo que en caso de incumplimiento de esta obligaci\u00f3n sea reportado a las centrales de riesgo, se cobraran intereses por mora.",
+    "status": "closed",
+    "client": {
+      "id": "5",
+      "name": "Cliente Demo",
+      "identification": "1234123",
+      "phonePrimary": null,
+      "phoneSecondary": null,
+      "fax": null,
+      "mobile": null,
+      "email": null,
+      "address": {
+        "address": null,
+        "department": null,
+        "city": null
+      },
+      "kindOfPerson": "PERSON_ENTITY",
+      "regime": "SIMPLIFIED_REGIME",
+      "identificationObject": {
+        "type": "NIT",
+        "number": "1234123"
+      }
+    },
+    "numberTemplate": {
+      "id": "1",
+      "prefix": null,
+      "number": "1",
+      "text": null,
+      "documentType": "invoice",
+      "fullNumber": "1",
+      "formattedNumber": "1"
+    },
+    "subtotal": 0,
+    "discount": 0,
+    "tax": 0,
+    "total": 0,
+    "totalPaid": 0,
+    "balance": 0,
+    "decimalPrecision": "0",
+    "warehouse": {
+      "id": "1",
+      "name": "Principal"
+    },
+    "barCodeContent": "NumFac: 1\nFecFac: 20230624000000\nHorFac: 21:58:48-05:00\nNitFac: \nDocAdq: 1234123\nValFac: 0.00\nValIva: 0.00\nValOtroIm: 0.00\nValTolFac: 0.00\n",
+    "seller": {
+      "id": 1,
+      "name": "Lily Pics",
+      "identification": "1",
+      "observations": "3"
+    },
+    "priceList": {
+      "id": 1,
+      "name": "General"
+    },
+    "items": [
+      {
+        "name": "Producto de prueba",
+        "description": "",
+        "price": 0,
+        "discount": 0,
+        "reference": "",
+        "quantity": 2,
+        "id": 2,
+        "productKey": null,
+        "unit": "unit",
+        "tax": [],
+        "total": 0
+      }
+    ],
+    "costCenter": null
+  }
+]

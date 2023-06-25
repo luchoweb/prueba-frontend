@@ -1,4 +1,4 @@
-import { Seller, Invoice } from "../types";
+import { Seller, InvoiceAPI } from "../types";
 
 const { VITE_APP_ALEGRA_USER, VITE_APP_ALEGRA_TOKEN, VITE_APP_ALEGRA_API_URL } =
   import.meta.env;
@@ -27,7 +27,7 @@ export const getSellerLikes = async (id: string) => {
     method: "GET",
   });
   const seller = await response.json();
-  return seller || [];
+  return parseInt(`${seller.observations}`) || 0;
 };
 
 export const updateSellerLikes = async ({ id, name, observations }: Seller) => {
@@ -49,11 +49,11 @@ export const getInvoices = async () => {
   return invoices || [];
 };
 
-export const createInvoice = async ({ items, dueDate, date, client }: Invoice) => {
+export const createInvoice = async ({ items, dueDate, date, client, seller }: InvoiceAPI) => {
   const response = await fetch(`${VITE_APP_ALEGRA_API_URL}/invoices`, {
     ...fetchOptions,
     method: "POST",
-    body: JSON.stringify({ items, dueDate, date, client }),
+    body: JSON.stringify({ items, dueDate, date, client, seller }),
   });
   const invoice = await response.json();
   return invoice || [];

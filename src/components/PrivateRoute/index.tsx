@@ -1,21 +1,19 @@
-import { useEffect, ReactNode } from 'react';
-import { useNavigate } from "react-router-dom";
-import { useAuth } from '../../hooks';
+import { ReactNode } from "react";
+import { Navigate } from "react-router-dom";
+import { useAuth } from "../../hooks";
 
-import { Loader } from '..';
+import { Loader } from "..";
 
 const PrivateRoute = (props: { component: ReactNode }) => {
-  const navigate = useNavigate();
   const { isLoading, hasLogged } = useAuth();
 
-  useEffect(() => {
-    if (!isLoading && !hasLogged) {
-      console.log("No user logged");
-      navigate("/login");
-    }
-  }, [hasLogged]);
-
-  return isLoading ? <Loader /> : props.component;
+  return isLoading ? (
+    <Loader />
+  ) : !isLoading && !hasLogged ? (
+    <Navigate to="/login" />
+  ) : (
+    props.component
+  );
 };
 
 export default PrivateRoute;

@@ -31,7 +31,7 @@ const Sellers = () => {
         <p>{t("sellers-not-found")}</p>
       ) : (
         sellers.map((seller) => (
-          <div className="col-12 col-md-6 col-lg-3 mb-4">
+          <div className="col-12 col-md-6 col-lg-3 mb-4" key={seller.id}>
             <SellerCard seller={seller} />
           </div>
         ))
