@@ -18,10 +18,10 @@ export const showLikeEffects = (id: string) => {
 }
 
 const showBigHeart = (id: string) => {
-  const bigHeart = document.querySelector(`#big-heart-${id}`);
+    const bigHeart = document.querySelector(`#big-heart-${id}`);
 
-  bigHeart?.classList.add("like");
-  setTimeout(() => {
-    bigHeart?.classList.remove("like");
-  }, 1000);
-};
+    bigHeart?.classList.add("like");
+    setTimeout(() => {
+      bigHeart?.classList.remove("like");
+    }, 1000);
+  };

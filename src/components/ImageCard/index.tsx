@@ -11,25 +11,24 @@ import "./styles.scss";
 
 const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
   const { t } = useTranslation();
-  // Almacenar en store con REDUX
-  const currentLikes = parseInt(`${seller.observations}`);
 
   const handleLike = async ({ id, name }: Seller) => {
+    if (hasPhotoLiked(id)) return;
+
     showLikeEffects(id);
 
     const sellerLikes = await getSellerLikes(id);
-    const newCountLikes = hasPhotoLiked(id) ? sellerLikes + 1 : sellerLikes - 1;
 
     updateSellerLikes({
       id,
       name,
-      observations: `${newCountLikes}`,
+      observations: `${sellerLikes + 1}`,
     })
       .then((seller) => {
-        const sellerLikes = parseInt(`${seller.observations}`);
-        console.log(sellerLikes);
-        if ( currentLikes < 20 && sellerLikes === 20) {
+        const currentLikes = parseInt(`${seller.observations}`);
+        if (currentLikes === 20) {
           // Si completó los 20 likes creamos la factura
+          console.log("Carrera Ganada!");
         }
       })
       .catch(console.error);

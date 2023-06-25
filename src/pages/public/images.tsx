@@ -22,7 +22,9 @@ const ImagesPage = () => {
 
   useEffect(() => {
     getSellers()
-      .then((sellers) => setSellers(sellers))
+      .then((sellers) => {
+        if(sellers) setSellers(sellers);
+      })
       .catch(console.error);
 
     searchImages(query)
