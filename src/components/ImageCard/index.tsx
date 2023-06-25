@@ -1,8 +1,14 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { getSellerLikes, updateSellerLikes } from "../../services/api-alegra";
+import {
+  createInvoice,
+  getSellerLikes,
+  getSellers,
+  getTotalSellersLikes,
+  updateSellerLikes,
+} from "../../services/api-alegra";
 import { hasPhotoLiked, showLikeEffects } from "../../utils/likes";
-import { Seller, ImageCardProps } from "../../types";
+import { Seller, ImageCardProps, InvoiceProduct } from "../../types";
 
 import { Avatar } from "..";
 import { showDefaultImage } from "../../utils/defaultImages";
@@ -12,23 +18,54 @@ import "./styles.scss";
 const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
   const { t } = useTranslation();
 
-  const handleLike = async ({ id, name }: Seller) => {
-    if (hasPhotoLiked(id)) return;
+  const handleLike = async (seller: Seller) => {
+    if (hasPhotoLiked(seller.id)) return;
 
-    showLikeEffects(id);
+    showLikeEffects(seller.id);
 
-    const sellerLikes = await getSellerLikes(id);
+    const sellers = await getSellers();
+
+    const isRaceOver = sellers.filter(
+      (seller: Seller) => parseInt(`${seller.observations}`) >= 20
+    ).length;
+
+    const sellerLikes = await getSellerLikes(seller.id);
 
     updateSellerLikes({
-      id,
-      name,
+      id: seller.id,
+      name: seller.name,
       observations: `${sellerLikes + 1}`,
     })
-      .then((seller) => {
+      .then(async (seller) => {
         const currentLikes = parseInt(`${seller.observations}`);
-        if (currentLikes === 20) {
-          // Si completó los 20 likes creamos la factura
-          console.log("Carrera Ganada!");
+
+        if (!isRaceOver && currentLikes === 20) {
+          const totalSellersLikes = sellers.reduce(
+            (accumulator: number, seller: Seller) => {
+              return accumulator + parseInt(`${seller.observations}`);
+            },
+            0
+          );
+
+          const product: InvoiceProduct = {
+            id: 1,
+            price: 0,
+            quantity: totalSellersLikes,
+          };
+
+          const date = new Date().toLocaleDateString('es').split('/').reverse().join('-');
+
+          console.log("¡Carrera Ganada!");
+
+          createInvoice({
+            items: [product],
+            client: 5,
+            dueDate: date,
+            date,
+            seller: seller.id,
+          })
+            .then(console.log)
+            .catch(console.error);
         }
       })
       .catch(console.error);
@@ -36,12 +73,8 @@ const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
 
   useEffect(() => {
     const photo = document.querySelector(`#image-${seller.id}`);
-
     photo?.addEventListener("dblclick", () => {
-      handleLike({
-        id: seller.id,
-        name: seller.name,
-      });
+      handleLike(seller);
     });
 
     return () => photo?.removeEventListener("dblclick", () => {});
@@ -73,12 +106,7 @@ const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
           <button
             id={`small-heart-${seller.id}`}
             className="image__btn image__btn-like d-flex align-items-center"
-            onClick={() =>
-              handleLike({
-                id: seller.id,
-                name: seller.name,
-              })
-            }
+            onClick={() => handleLike(seller)}
           >
             <i className="bi bi-heart-fill me-2"></i>
             <span className="me-3">{t("love")}</span>

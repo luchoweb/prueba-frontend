@@ -13,7 +13,7 @@ import ImageCard from "../../components/ImageCard";
 import Layout from "../layout";
 
 const ImagesPage = () => {
-  const { query = "flowers" } = useParams();
+  const { query = "landscape" } = useParams();
   const { t } = useTranslation();
   const skeletons = [1, 2, 3, 4];
   const [images, setImages] = useState<Photo[]>();

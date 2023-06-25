@@ -8,7 +8,7 @@ export interface Invoice {
 }
 
 interface InvoiceAPI extends Omit<Invoice, 'client'> {
-  client: number
+  client: number;
 }
 
 export type Seller  = {

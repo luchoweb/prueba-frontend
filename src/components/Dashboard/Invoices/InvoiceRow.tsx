@@ -13,7 +13,7 @@ const InvoiceRow = ({ invoice }: InvoiceRowProps) => {
           ))}
         </ul>
       </td>
-      <td>{invoice.seller.name}</td>
+      <td>{invoice?.seller?.name || "No reporta"}</td>
     </tr>
   )
 }
