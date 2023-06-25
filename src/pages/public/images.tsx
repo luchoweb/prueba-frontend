@@ -80,7 +80,6 @@ const ImagesPage = () => {
                     <ImageCard
                       seller={seller}
                       image={images[index]?.src?.large}
-                      index={index}
                     />
                   </div>
                 )

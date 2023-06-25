@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { getSellerLikes, updateSellerLikes } from "../../services/api-alegra";
+import { hasPhotoLiked, showLikeEffects } from "../../utils/likes";
 import { Seller, ImageCardProps } from "../../types";
 
 import { Avatar } from "..";
@@ -12,18 +13,12 @@ const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
   const { t } = useTranslation();
   // Almacenar en store con REDUX
   const currentLikes = parseInt(`${seller.observations}`);
-  const likeHeartClassName = "image__btn-like--liked";
 
   const handleLike = async ({ id, name }: Seller) => {
-    const smallHeart = document.querySelector(`#small-heart-${id}`);
-    const hasLiked = smallHeart?.classList.contains(likeHeartClassName);
+    showLikeEffects(id);
 
-    !hasLiked
-      ? smallHeart?.classList.add(likeHeartClassName)
-      : smallHeart?.classList.remove(likeHeartClassName);
-    
     const sellerLikes = await getSellerLikes(id);
-    const newCountLikes = !hasLiked ? sellerLikes + 1 : sellerLikes - 1;
+    const newCountLikes = hasPhotoLiked(id) ? sellerLikes + 1 : sellerLikes - 1;
 
     updateSellerLikes({
       id,
@@ -32,28 +27,25 @@ const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
     })
       .then((seller) => {
         const sellerLikes = parseInt(`${seller.observations}`);
+        console.log(sellerLikes);
         if ( currentLikes < 20 && sellerLikes === 20) {
           // Si completó los 20 likes creamos la factura
         }
-        console.log(seller);
       })
       .catch(console.error);
   };
 
   useEffect(() => {
-    const image = document.querySelector(`#image-${seller.id}`);
-    const bigHeart = document.querySelector(`#big-heart-${seller.id}`);
-    image?.addEventListener("dblclick", () => {
+    const photo = document.querySelector(`#image-${seller.id}`);
+
+    photo?.addEventListener("dblclick", () => {
       handleLike({
         id: seller.id,
-        name: seller.name
+        name: seller.name,
       });
-
-      bigHeart?.classList.add("like");
-      setTimeout(() => {
-        bigHeart?.classList.remove("like");
-      }, 1000);
     });
+
+    return () => photo?.removeEventListener("dblclick", () => {});
   }, []);
 
   return (
