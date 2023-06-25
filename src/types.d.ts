@@ -7,13 +7,8 @@ export interface Invoice {
   seller: Seller;
 }
 
-export interface InvoiceAPI {
-  id?: string;
-  items: InvoiceProduct[];
-  dueDate: date;
-  date: date;
-  client: number;
-  seller: Seller;
+interface InvoiceAPI extends Omit<Invoice, 'client'> {
+  client: number
 }
 
 export type Seller  = {
@@ -36,23 +31,21 @@ export type InvoiceClient = {
   name: string;
 }
 
-export type ImageCardProps = {
+export type SellerCardProps = {
   seller: Seller;
+};
+
+export type ImageCardProps = SellerCardProps & {
   image?: string;
 };
 
-export type AvatarProps = {
-  seller: Seller;
+export type AvatarProps = SellerCardProps & {
   height?: number;
   customClassName?: string;
 };
 
 export type AppLogoProps = {
   theme?: string;
-};
-
-export type SellerCardProps = {
-  seller: Seller;
 };
 
 export type InvoiceRowProps = {
