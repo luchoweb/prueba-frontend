@@ -4,7 +4,6 @@ import {
   createInvoice,
   getSellerLikes,
   getSellers,
-  getTotalSellersLikes,
   updateSellerLikes,
 } from "../../services/api-alegra";
 import { hasPhotoLiked, showLikeEffects } from "../../utils/likes";

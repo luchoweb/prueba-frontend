@@ -30,19 +30,6 @@ export const getSellerLikes = async (id: string) => {
   return parseInt(`${seller.observations}`) || 0;
 };
 
-export const getTotalSellersLikes = async () => {
-  const response = await fetch(`${VITE_APP_ALEGRA_API_URL}/sellers`, {
-    ...fetchOptions,
-    method: "GET",
-  });
-
-  const sellers = await response.json();
-  
-  return sellers.reduce((accumulator: number, seller: Seller) => {
-    return accumulator + parseInt(`${seller.observations}`);
-  }, 0);
-};
-
 export const updateSellerLikes = async ({ id, name, observations }: Seller) => {
   const response = await fetch(`${VITE_APP_ALEGRA_API_URL}/sellers/${id}`, {
     ...fetchOptions,
