@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { getInvoices } from "../../../services/api-alegra";
 import { Invoice } from "../../../types";
 
-import { SkeletonCard } from "../../Skeletons";
-import InvoiceCard from "./InvoiceCard";
+import { SkeletonTable } from "../../Skeletons";
+import InvoiceRow from "./InvoiceRow";
 
 const Invoices = () => {
   const { t } = useTranslation();
@@ -25,16 +25,27 @@ const Invoices = () => {
     <div className="invoices-list row">
       {isLoading ? (
         <div className="col-12 col-md-6 col-lg-3 mb-4">
-          <SkeletonCard />
+          <SkeletonTable />
         </div>
       ) : !invoices?.length ? (
         <p>{t("invoices-not-found")}</p>
       ) : (
-        invoices.map((invoice) => (
-          <div className="col-12 col-md-6 col-lg-3 mb-4">
-            <InvoiceCard invoice={invoice} />
-          </div>
-        ))
+        <div className="table-responsive">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">{t("invoice")} #</th>
+                <th scope="col">Productos (Cant)</th>
+                <th scope="col">{t("seller")}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {invoices.map((invoice) => (
+                <InvoiceRow invoice={invoice} key={invoice.id} />
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

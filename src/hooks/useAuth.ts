@@ -11,7 +11,7 @@ const useAuth = () => {
       setHasLogged(user ? true : false);
       setIsLoading(false);
     });
-  }, []);
+  }, [isLoading, hasLogged]);
 
   return {
     isLoading,
