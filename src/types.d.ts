@@ -1,4 +1,22 @@
-export interface Seller {
+export interface Invoice {
+  id?: string;
+  items: InvoiceProduct[];
+  dueDate: date;
+  date: date;
+  client: InvoiceClient;
+  seller: Seller;
+}
+
+export interface InvoiceAPI {
+  id?: string;
+  items: InvoiceProduct[];
+  dueDate: date;
+  date: date;
+  client: number;
+  seller: Seller;
+}
+
+export type Seller  = {
   id: string;
   identification?: string;
   name: string;
@@ -6,12 +24,16 @@ export interface Seller {
   status?: string;
 }
 
-export interface Invoice {
-  id?: string;
-  items: object[];
-  dueDate: date;
-  date: date;
-  client: object;
+export type InvoiceProduct  = {
+  id: number;
+  price: number;
+  name?: string;
+  quantity: number;
+}
+
+export type InvoiceClient = {
+  id: number;
+  name: string;
 }
 
 export type ImageCardProps = {
@@ -27,13 +49,13 @@ export type AvatarProps = {
 };
 
 export type AppLogoProps = {
-  theme?: string
+  theme?: string;
 };
 
 export type SellerCardProps = {
   seller: Seller;
-}
+};
 
-export type InvoiceCardProps = {
+export type InvoiceRowProps = {
   invoice: Invoice;
-}
+};

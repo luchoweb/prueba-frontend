@@ -1,4 +1,4 @@
-import { Seller, Invoice } from "../types";
+import { Seller, Invoice, InvoiceAPI } from "../types";
 
 const { VITE_APP_ALEGRA_USER, VITE_APP_ALEGRA_TOKEN, VITE_APP_ALEGRA_API_URL } =
   import.meta.env;
@@ -49,7 +49,7 @@ export const getInvoices = async () => {
   return invoices || [];
 };
 
-export const createInvoice = async ({ items, dueDate, date, client }: Invoice) => {
+export const createInvoice = async ({ items, dueDate, date, client }: InvoiceAPI) => {
   const response = await fetch(`${VITE_APP_ALEGRA_API_URL}/invoices`, {
     ...fetchOptions,
     method: "POST",

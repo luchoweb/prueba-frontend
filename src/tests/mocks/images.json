@@ -1,252 +1,96 @@
 {
-  "kind": "customsearch#search",
-  "url": {
-    "type": "application/json",
-    "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
-  },
-  "queries": {
-    "request": [
-      {
-        "title": "Google Custom Search - montaña",
-        "totalResults": "4760000000",
-        "searchTerms": "montaña",
-        "count": 10,
-        "startIndex": 1,
-        "inputEncoding": "utf8",
-        "outputEncoding": "utf8",
-        "safe": "high",
-        "cx": "f3d373691022646fe",
-        "searchType": "image",
-        "imgSize": "large",
-        "imgType": "photo"
-      }
-    ],
-    "nextPage": [
-      {
-        "title": "Google Custom Search - montaña",
-        "totalResults": "4760000000",
-        "searchTerms": "montaña",
-        "count": 10,
-        "startIndex": 11,
-        "inputEncoding": "utf8",
-        "outputEncoding": "utf8",
-        "safe": "high",
-        "cx": "f3d373691022646fe",
-        "searchType": "image",
-        "imgSize": "large",
-        "imgType": "photo"
-      }
-    ]
-  },
-  "context": {
-    "title": "Google Images Test"
-  },
-  "searchInformation": {
-    "searchTime": 0.226864,
-    "formattedSearchTime": "0.23",
-    "totalResults": "4760000000",
-    "formattedTotalResults": "4,760,000,000"
-  },
-  "items": [
+  "page": 1,
+  "per_page": 4,
+  "photos": [
     {
-      "kind": "customsearch#result",
-      "title": "Montañas: qué son, formación, tipos, clima y características",
-      "htmlTitle": "<b>Montañas</b>: qué son, formación, tipos, clima y características",
-      "link": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
-      "displayLink": "humanidades.com",
-      "snippet": "Montañas: qué son, formación, tipos, clima y características",
-      "htmlSnippet": "<b>Montañas</b>: qué son, formación, tipos, clima y características",
-      "mime": "image/jpeg",
-      "fileFormat": "image/jpeg",
-      "image": {
-        "contextLink": "https://humanidades.com/montanas/",
-        "height": 400,
-        "width": 800,
-        "byteSize": 55901,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0OKlUl_PAEK5NW7fESB3vevWiqwAhT-wY-CeDqq95DhGJ2sCGbr-wg&s",
-        "thumbnailHeight": 72,
-        "thumbnailWidth": 143
-      }
+      "id": 2607544,
+      "width": 6000,
+      "height": 4000,
+      "url": "https://www.pexels.com/photo/medium-short-coated-white-dog-on-white-textile-2607544/",
+      "photographer": "Simona Kidrič",
+      "photographer_url": "https://www.pexels.com/@simonakidric",
+      "photographer_id": 1348455,
+      "avg_color": "#B3B9C0",
+      "src": {
+        "original": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg",
+        "large2x": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940",
+        "large": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=650\u0026w=940",
+        "medium": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=350",
+        "small": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=130",
+        "portrait": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=1200\u0026w=800",
+        "landscape": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+        "tiny": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=1\u0026fit=crop\u0026h=200\u0026w=280"
+      },
+      "liked": false,
+      "alt": "Medium Short-coated White Dog on White Textile"
     },
     {
-      "kind": "customsearch#result",
-      "title": "Tema | Día Internacional de las Montañas | Organización de las ...",
-      "htmlTitle": "Tema | Día Internacional de las <b>Montañas</b> | Organización de las ...",
-      "link": "https://www.fao.org/uploads/pics/IMD_theme_banner_2023.png",
-      "displayLink": "www.fao.org",
-      "snippet": "Tema | Día Internacional de las Montañas | Organización de las ...",
-      "htmlSnippet": "Tema | Día Internacional de las <b>Montañas</b> | Organización de las ...",
-      "mime": "image/png",
-      "fileFormat": "image/png",
-      "image": {
-        "contextLink": "https://www.fao.org/international-mountain-day/theme/es/",
-        "height": 360,
-        "width": 920,
-        "byteSize": 543125,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR48ZWQ3EIhDvpbk9kCMlJBTevgGpAQ4gimn42tzjmYeHtwzm1s4H2c-pI&s",
-        "thumbnailHeight": 58,
-        "thumbnailWidth": 147
-      }
+      "id": 895259,
+      "width": 3648,
+      "height": 5052,
+      "url": "https://www.pexels.com/photo/soft-focus-photo-of-dachshund-895259/",
+      "photographer": "Dominika Roseclay",
+      "photographer_url": "https://www.pexels.com/@punchbrandstock",
+      "photographer_id": 215243,
+      "avg_color": "#C3B7AF",
+      "src": {
+        "original": "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg",
+        "large2x": "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940",
+        "large": "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=650\u0026w=940",
+        "medium": "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=350",
+        "small": "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=130",
+        "portrait": "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=1200\u0026w=800",
+        "landscape": "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+        "tiny": "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=1\u0026fit=crop\u0026h=200\u0026w=280"
+      },
+      "liked": false,
+      "alt": "Soft Focus Photo of Dachshund"
     },
     {
-      "kind": "customsearch#result",
-      "title": "Montañas: qué son, formación, tipos, clima y características",
-      "htmlTitle": "<b>Montañas</b>: qué son, formación, tipos, clima y características",
-      "link": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-flora-e1543189986305.jpg",
-      "displayLink": "humanidades.com",
-      "snippet": "Montañas: qué son, formación, tipos, clima y características",
-      "htmlSnippet": "<b>Montañas</b>: qué son, formación, tipos, clima y características",
-      "mime": "image/jpeg",
-      "fileFormat": "image/jpeg",
-      "image": {
-        "contextLink": "https://humanidades.com/montanas/",
-        "height": 400,
-        "width": 800,
-        "byteSize": 86138,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1oIisOku9I2DVD7vmJRItejTGIZZLqV9nKCbMYHDY4XL2l9HN0VnpXw&s",
-        "thumbnailHeight": 72,
-        "thumbnailWidth": 143
-      }
+      "id": 3196887,
+      "width": 4000,
+      "height": 6000,
+      "url": "https://www.pexels.com/photo/siberian-husky-doing-a-wink-expression-3196887/",
+      "photographer": "Julissa Helmuth",
+      "photographer_url": "https://www.pexels.com/@jhelmuth",
+      "photographer_id": 1473581,
+      "avg_color": "#3D403B",
+      "src": {
+        "original": "https://images.pexels.com/photos/3196887/pexels-photo-3196887.jpeg",
+        "large2x": "https://images.pexels.com/photos/3196887/pexels-photo-3196887.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940",
+        "large": "https://images.pexels.com/photos/3196887/pexels-photo-3196887.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=650\u0026w=940",
+        "medium": "https://images.pexels.com/photos/3196887/pexels-photo-3196887.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=350",
+        "small": "https://images.pexels.com/photos/3196887/pexels-photo-3196887.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=130",
+        "portrait": "https://images.pexels.com/photos/3196887/pexels-photo-3196887.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=1200\u0026w=800",
+        "landscape": "https://images.pexels.com/photos/3196887/pexels-photo-3196887.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+        "tiny": "https://images.pexels.com/photos/3196887/pexels-photo-3196887.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=1\u0026fit=crop\u0026h=200\u0026w=280"
+      },
+      "liked": false,
+      "alt": "Siberian Husky Doing a Wink Expression "
     },
     {
-      "kind": "customsearch#result",
-      "title": "La montaña de colores peruana está en peligro - The New York Times",
-      "htmlTitle": "La <b>montaña</b> de colores peruana está en peligro - The New York Times",
-      "link": "https://static01.nyt.com/images/2018/05/04/world/04peru-print/merlin_137617257_8fc0ffe4-510c-47e6-8050-c3c1048ee96b-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
-      "displayLink": "www.nytimes.com",
-      "snippet": "La montaña de colores peruana está en peligro - The New York Times",
-      "htmlSnippet": "La <b>montaña</b> de colores peruana está en peligro - The New York Times",
-      "mime": "image/jpeg",
-      "fileFormat": "image/jpeg",
-      "image": {
-        "contextLink": "https://www.nytimes.com/es/2018/05/04/espanol/peru-montana-arcoiris-vinicunca.html",
-        "height": 309,
-        "width": 600,
-        "byteSize": 30055,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIupxYsucDLKmX8b7oEKkiX3J_p_X7Gxlqh0eDpYGalPB-RqvlZoW67EM&s",
-        "thumbnailHeight": 70,
-        "thumbnailWidth": 135
-      }
-    },
-    {
-      "kind": "customsearch#result",
-      "title": "Guía para el Parque Nacional de las Montañas Rocosas",
-      "htmlTitle": "Guía para el Parque Nacional de las <b>Montañas</b> Rocosas",
-      "link": "https://cdn.aarp.net/content/dam/aarp/travel/Domestic/2020/07/1140-rocky-mountain-national-park-esp.imgcache.rev.web.1000.575.jpg",
-      "displayLink": "www.aarp.org",
-      "snippet": "Guía para el Parque Nacional de las Montañas Rocosas",
-      "htmlSnippet": "Guía para el Parque Nacional de las <b>Montañas</b> Rocosas",
-      "mime": "image/jpeg",
-      "fileFormat": "image/jpeg",
-      "image": {
-        "contextLink": "https://www.aarp.org/espanol/turismo/nacional/info-2020/guia-parque-montanas-rocosas-rocky-mountain.html",
-        "height": 518,
-        "width": 900,
-        "byteSize": 139802,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmzkcb1G21Fd7U1KW1fa3Fwq0DiyceimrttERiQiYz8R9iRuNe8qH92A&s",
-        "thumbnailHeight": 84,
-        "thumbnailWidth": 146
-      }
-    },
-    {
-      "kind": "customsearch#result",
-      "title": "Montañas: qué son, formación, tipos, clima y características",
-      "htmlTitle": "<b>Montañas</b>: qué son, formación, tipos, clima y características",
-      "link": "https://humanidades.com/wp-content/uploads/2018/12/monta%C3%B1a-1-e1584582335360.jpg",
-      "displayLink": "humanidades.com",
-      "snippet": "Montañas: qué son, formación, tipos, clima y características",
-      "htmlSnippet": "<b>Montañas</b>: qué son, formación, tipos, clima y características",
-      "mime": "image/jpeg",
-      "fileFormat": "image/jpeg",
-      "image": {
-        "contextLink": "https://humanidades.com/montanas/",
-        "height": 400,
-        "width": 800,
-        "byteSize": 77155,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmDW_3xXjMF8lL0Vt1yOJ-VEUd9f02npG92CWZC8nGuE1DRmE20Iq0yw&s",
-        "thumbnailHeight": 72,
-        "thumbnailWidth": 143
-      }
-    },
-    {
-      "kind": "customsearch#result",
-      "title": "Monte Everest: por qué China y Nepal volvieron a medir la altura ...",
-      "htmlTitle": "Monte Everest: por qué China y Nepal volvieron a medir la altura ...",
-      "link": "https://ichef.bbci.co.uk/news/640/cpsprodpb/89DF/production/_115959253_gettyimages-629600855.jpg",
-      "displayLink": "www.bbc.com",
-      "snippet": "Monte Everest: por qué China y Nepal volvieron a medir la altura ...",
-      "htmlSnippet": "Monte Everest: por qué China y Nepal volvieron a medir la altura ...",
-      "mime": "image/jpeg",
-      "fileFormat": "image/jpeg",
-      "image": {
-        "contextLink": "https://www.bbc.com/mundo/noticias-55231280",
-        "height": 360,
-        "width": 640,
-        "byteSize": 44799,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3u1sbkZSHdReYcSA9u4QlRV4NO4ZY3IIPseZ15H5hRvZf6vZyQ_uxGg&s",
-        "thumbnailHeight": 77,
-        "thumbnailWidth": 137
-      }
-    },
-    {
-      "kind": "customsearch#result",
-      "title": "Montaña, sierra o cordillera. | Baamboozle - Baamboozle | The Most ...",
-      "htmlTitle": "<b>Montaña</b>, sierra o cordillera. | Baamboozle - Baamboozle | The Most ...",
-      "link": "https://media.baamboozle.com/uploads/images/22576/1604060676_97936",
-      "displayLink": "www.baamboozle.com",
-      "snippet": "Montaña, sierra o cordillera. | Baamboozle - Baamboozle | The Most ...",
-      "htmlSnippet": "<b>Montaña</b>, sierra o cordillera. | Baamboozle - Baamboozle | The Most ...",
-      "mime": "image/",
-      "fileFormat": "image/",
-      "image": {
-        "contextLink": "https://www.baamboozle.com/study/211247",
-        "height": 465,
-        "width": 696,
-        "byteSize": 97936,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoXkcn0rev7o1EPWTQqd0YRnFlurlNrLsWFNZzv6DdtwaCx6dnQWsXGE8&s",
-        "thumbnailHeight": 93,
-        "thumbnailWidth": 139
-      }
-    },
-    {
-      "kind": "customsearch#result",
-      "title": "Montaña - Concepto, cómo se forma, partes, vegetación y más",
-      "htmlTitle": "<b>Montaña</b> - Concepto, cómo se forma, partes, vegetación y más",
-      "link": "https://concepto.de/wp-content/uploads/2018/08/monta%C3%B1as-e1533762816593.jpg",
-      "displayLink": "concepto.de",
-      "snippet": "Montaña - Concepto, cómo se forma, partes, vegetación y más",
-      "htmlSnippet": "<b>Montaña</b> - Concepto, cómo se forma, partes, vegetación y más",
-      "mime": "image/jpeg",
-      "fileFormat": "image/jpeg",
-      "image": {
-        "contextLink": "https://concepto.de/montana/",
-        "height": 400,
-        "width": 800,
-        "byteSize": 85339,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlCF-8zVTs0mnzHCWkIn7AWhCbMmmymQz7XtJYY1aktG-_-Q_h1nfRSg&s",
-        "thumbnailHeight": 72,
-        "thumbnailWidth": 143
-      }
-    },
-    {
-      "kind": "customsearch#result",
-      "title": "Montaña de Oro State Park - Wikipedia",
-      "htmlTitle": "<b>Montaña</b> de Oro State Park - Wikipedia",
-      "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Montana_de_Oro%2C_California_state_park.jpg/640px-Montana_de_Oro%2C_California_state_park.jpg",
-      "displayLink": "en.wikipedia.org",
-      "snippet": "Montaña de Oro State Park - Wikipedia",
-      "htmlSnippet": "<b>Montaña</b> de Oro State Park - Wikipedia",
-      "mime": "image/jpeg",
-      "fileFormat": "image/jpeg",
-      "image": {
-        "contextLink": "https://en.wikipedia.org/wiki/Monta%C3%B1a_de_Oro_State_Park",
-        "height": 480,
-        "width": 640,
-        "byteSize": 137892,
-        "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLnyibJXGP3vMWagoExrcNfA-vy8A4evPxgh6xteNgl0RW58SZfInEA&s",
-        "thumbnailHeight": 103,
-        "thumbnailWidth": 137
-      }
+      "id": 3299906,
+      "width": 7360,
+      "height": 4912,
+      "url": "https://www.pexels.com/photo/four-dogs-on-pink-background-3299906/",
+      "photographer": "Goochie Poochie Grooming",
+      "photographer_url": "https://www.pexels.com/@goochie-poochie",
+      "photographer_id": 2574398,
+      "avg_color": "#C05269",
+      "src": {
+        "original": "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg",
+        "large2x": "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940",
+        "large": "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=650\u0026w=940",
+        "medium": "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=350",
+        "small": "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress\u0026cs=tinysrgb\u0026h=130",
+        "portrait": "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=1200\u0026w=800",
+        "landscape": "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress\u0026cs=tinysrgb\u0026fit=crop\u0026h=627\u0026w=1200",
+        "tiny": "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=1\u0026fit=crop\u0026h=200\u0026w=280"
+      },
+      "liked": false,
+      "alt": "Four Dogs on Pink Background"
     }
-  ]
+  ],
+  "total_results": 8000,
+  "next_page": "https://api.pexels.com/v1/search/?page=2\u0026per_page=4\u0026query=dogs"
 }
