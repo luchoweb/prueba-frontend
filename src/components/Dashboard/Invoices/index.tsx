@@ -31,7 +31,7 @@ const Invoices = () => {
         <p>{t("invoices-not-found")}</p>
       ) : (
         invoices.map((invoice) => (
-          <div className="col-12 col-md-6 col-lg-3 mb-4">
+          <div className="col-12 col-md-6 col-lg-3 mb-4" key={invoice.id}>
             <InvoiceCard invoice={invoice} />
           </div>
         ))

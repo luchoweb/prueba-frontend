@@ -42,10 +42,15 @@ strong {
   border: none;
   border-radius: .2rem;
   font-weight: 600;
-  line-height: 1.5rem;
+  line-height: 1rem;
   padding: .5rem .7rem;
   text-decoration: none;
   transition: all .2s ease-in-out;
+
+  * {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
   &:hover {
     opacity: .7;
@@ -73,5 +78,5 @@ strong {
 
 .link {
   color: var(--color-text);
-  text-decoration: none;
+  text-decoration: underline;
 }

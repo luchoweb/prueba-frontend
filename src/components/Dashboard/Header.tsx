@@ -10,7 +10,10 @@ const Header = () => {
         <h5 className="m-0">{t("dashboard-title")}</h5>
       </div>
       <div className="col-5 col-md-6 text-end">
-        <button className="button button--sm button--red" onClick={() => logout()}>{t("logout")}</button>
+        <button className="button button--sm button--red" onClick={() => logout()}>
+          <span>{t("logout")}</span>
+          <i className="bi bi-box-arrow-right ms-1"></i>
+        </button>
       </div>
     </div>
   );
