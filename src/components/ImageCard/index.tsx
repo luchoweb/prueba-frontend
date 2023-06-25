@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { updateSellerLikes } from "../../services/api-alegra";
+import { getSellerLikes, updateSellerLikes } from "../../services/api-alegra";
 import { Seller, ImageCardProps } from "../../types";
 
 import { Avatar } from "..";
@@ -8,29 +8,45 @@ import { showDefaultImage } from "../../utils/defaultImages";
 
 import "./styles.scss";
 
-const ImageCard = ({ seller, index, image = "" }: ImageCardProps) => {
+const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
   const { t } = useTranslation();
+  // Almacenar en store con REDUX
+  const currentLikes = parseInt(`${seller.observations}`);
+  const likeHeartClassName = "image__btn-like--liked";
 
-  const handleLike = ({ id, name, observations }: Seller) => {
-    const likes = observations || "0";
+  const handleLike = async ({ id, name }: Seller) => {
+    const smallHeart = document.querySelector(`#small-heart-${id}`);
+    const hasLiked = smallHeart?.classList.contains(likeHeartClassName);
+
+    !hasLiked
+      ? smallHeart?.classList.add(likeHeartClassName)
+      : smallHeart?.classList.remove(likeHeartClassName);
+    
+    const sellerLikes = await getSellerLikes(id);
+    const newCountLikes = !hasLiked ? sellerLikes + 1 : sellerLikes - 1;
 
     updateSellerLikes({
       id,
       name,
-      observations: `${parseInt(likes) + 1}`,
+      observations: `${newCountLikes}`,
     })
-      .then(console.log)
+      .then((seller) => {
+        const sellerLikes = parseInt(`${seller.observations}`);
+        if ( currentLikes < 20 && sellerLikes === 20) {
+          // Si completó los 20 likes creamos la factura
+        }
+        console.log(seller);
+      })
       .catch(console.error);
   };
 
   useEffect(() => {
-    const image = document.querySelector(`#image-${index}`);
-    const bigHeart = document.querySelector(`#big-heart-${index}`);
+    const image = document.querySelector(`#image-${seller.id}`);
+    const bigHeart = document.querySelector(`#big-heart-${seller.id}`);
     image?.addEventListener("dblclick", () => {
       handleLike({
         id: seller.id,
-        name: seller.name,
-        observations: seller.observations || "0"
+        name: seller.name
       });
 
       bigHeart?.classList.add("like");
@@ -52,10 +68,10 @@ const ImageCard = ({ seller, index, image = "" }: ImageCardProps) => {
         </p>
       </div>
 
-      <div className="image-card__image mt-2" id={`image-${index}`}>
+      <div className="image-card__image mt-2" id={`image-${seller.id}`}>
         <i
           className="bi bi-heart-fill big-heart me-2"
-          id={`big-heart-${index}`}
+          id={`big-heart-${seller.id}`}
         ></i>
 
         <picture className="image__container">
@@ -64,12 +80,14 @@ const ImageCard = ({ seller, index, image = "" }: ImageCardProps) => {
 
         <div className="image__options">
           <button
+            id={`small-heart-${seller.id}`}
             className="image__btn image__btn-like d-flex align-items-center"
-            onClick={() => handleLike({
-              id: seller.id,
-              name: seller.name,
-              observations: seller.observations || "0"
-            })}
+            onClick={() =>
+              handleLike({
+                id: seller.id,
+                name: seller.name,
+              })
+            }
           >
             <i className="bi bi-heart-fill me-2"></i>
             <span className="me-3">{t("love")}</span>

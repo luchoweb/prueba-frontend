@@ -38,7 +38,6 @@ export type InvoiceClient = {
 
 export type ImageCardProps = {
   seller: Seller;
-  index: number;
   image?: string;
 };
 

@@ -7,7 +7,7 @@ const InvoiceRow = ({ invoice }: InvoiceRowProps) => {
       <td>
         <ul className="m-0 ps-3">
           {invoice.items.map(item =>(
-          <li>
+          <li key={item.id}>
             {item.name} ({item.quantity})
           </li>
           ))}

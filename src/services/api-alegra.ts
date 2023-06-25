@@ -27,7 +27,7 @@ export const getSellerLikes = async (id: string) => {
     method: "GET",
   });
   const seller = await response.json();
-  return seller || [];
+  return parseInt(`${seller.observations}`) || 0;
 };
 
 export const updateSellerLikes = async ({ id, name, observations }: Seller) => {

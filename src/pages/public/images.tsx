@@ -22,7 +22,7 @@ const ImagesPage = () => {
 
   useEffect(() => {
     getSellers()
-      .then((response) => setSellers(response))
+      .then((sellers) => setSellers(sellers))
       .catch(console.error);
 
     searchImages(query)
@@ -40,9 +40,7 @@ const ImagesPage = () => {
       <div className="container">
         <div className="row align-items-center mb-4">
           <div className="col-6">
-            <h5 className="m-0">{`${t(
-              "search-results-title"
-            )} "${query}"`}</h5>
+            <h5 className="m-0">{`${t("search-results-title")} "${query}"`}</h5>
           </div>
           <div className="col-6 d-flex justify-content-end">
             <Link to="/" className="button button--dark">
@@ -69,7 +67,8 @@ const ImagesPage = () => {
               </Link>
             </div>
           ) : (
-            !isLoading && sellers?.length &&
+            !isLoading &&
+            sellers?.length &&
             images?.length &&
             sellers?.map(
               (seller, index) =>
