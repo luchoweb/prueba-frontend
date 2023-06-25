@@ -49,7 +49,7 @@ const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
           const product: InvoiceProduct = {
             id: 1,
             price: 0,
-            quantity: totalSellersLikes,
+            quantity: totalSellersLikes + 1,
           };
 
           const date = new Date().toLocaleDateString('es').split('/').reverse().join('-');
