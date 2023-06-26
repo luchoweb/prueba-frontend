@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
 import { Seller } from "../types";
 
 import { ImageCard } from "../components";
@@ -15,10 +14,10 @@ describe("ImageCard Component", () => {
       <ImageCard seller={seller} image={image} />
     );
 
-    const appName = getByTestId("seller-name");
-    const sellerName = getByTestId("photo");
+    const sellerName = getByTestId("seller-name");
+    const photo = getByTestId("photo");
 
-    expect(appName).toBeTruthy();
     expect(sellerName).toBeTruthy();
+    expect(photo).toBeTruthy();
   });
 });

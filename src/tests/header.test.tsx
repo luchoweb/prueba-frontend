@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from "../redux/store";
-import { BrowserRouter } from "react-router-dom";
 
 import { Header } from "../components";
 
@@ -15,12 +15,12 @@ describe("Header Component", () => {
       </Provider>
     );
 
-    const appName = getByText(/Imágenes del Mundo/i);
-    const headerButton = getByText(/login/);
+    const appName = getByText("Imágenes del Mundo");
+    const loginBtn = getByText("login");
     const langSelect = getByTestId("lang-selector");
 
     expect(appName).toBeTruthy();
-    expect(headerButton).toBeTruthy();
+    expect(loginBtn).toBeTruthy();
     expect(langSelect).toBeTruthy();
   });
 });
