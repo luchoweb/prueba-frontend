@@ -1,7 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import { PrivateRoute } from "../components";
-import { HomePage, ImagesPage, LoginPage, DashboardPage } from "../pages";
+
+import {
+  HomePage,
+  ImagesPage,
+  LoginPage,
+  DashboardPage,
+  Error404Page,
+} from "../pages";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +29,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <p>404</p>,
+    element: <Error404Page />,
   },
 ]);
