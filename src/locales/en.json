@@ -21,7 +21,22 @@
   "sellers": "Sellers",
   "seller": "Seller",
   "dashboard-title": "Dashboard",
+  "dashboard": "Dashboard",
   "invoices": "Invoices",
   "invoice": "Invoice",
-  "loading": "Loading"
+  "loading": "Loading",
+  "sellers-not-found": "Sellers not found.",
+  "not-found-title": "Page not found",
+  "not-found-first-text": "The page you are trying to view does not exist or was removed.",
+  "not-found-second-text": "Please go back to home and try again.",
+  "error-boundery-title": "An unexpected error has occurred!",
+  "error-boundery-text": "Please reload the window.",
+  "error-boundery-code-title": "Technical detail of the error:",
+  "likes-progress": "Likes progress",
+  "likes-earned": "Earned",
+  "remaining-likes": "Remaining",
+  "products": "Products",
+  "product": "Product",
+  "quantity": "Quantity",
+  "qty": "Qty"
 }

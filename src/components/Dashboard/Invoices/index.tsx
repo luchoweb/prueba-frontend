@@ -9,6 +9,7 @@ import InvoiceRow from "./InvoiceRow";
 
 const Invoices = () => {
   const { t } = useTranslation();
+
   const [invoices, setInvoices] = useState<Array<Invoice>>();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -35,7 +36,7 @@ const Invoices = () => {
             <thead>
               <tr>
                 <th scope="col">{t("invoice")} #</th>
-                <th scope="col">Productos (Cant)</th>
+                <th scope="col">{t("products")} ({t("qty")})</th>
                 <th scope="col">{t("seller")}</th>
               </tr>
             </thead>

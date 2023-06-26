@@ -1,4 +1,4 @@
-import { Component, ReactNode } from "react";
+import { Component, ErrorInfo, ReactNode } from "react";
 import ErrorView from "./ErrorView";
 
 export interface State {
@@ -11,17 +11,28 @@ interface Props {
 }
 
 class ErrorBoundary extends Component<Props, State> {
-  public state: State = {
-    hasError: false,
-  };
+  state: State;
 
-  public static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      hasError: false,
+      error: null
+    };
   }
 
-  public render() {
+  static getDerivedStateFromError(_: Error) {
+    return { hasError: true };
+  };
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    this.setState({ hasError: true, error });
+    console.error("Uncaught error:", error, errorInfo);
+  }
+
+  render() {
     if (this.state.hasError) {
-      return <ErrorView error={this.state?.error} />;
+      return <ErrorView error={this.state.error} />;
     }
 
     return this.props.children;
