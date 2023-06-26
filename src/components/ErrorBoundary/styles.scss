@@ -1,0 +1,19 @@
+.error-boundary {
+  background-color: var(--color-text);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  min-height: 400px;
+  width: 100%;
+
+  .code-container {
+    height: fit-content;
+    max-width: 100%;
+    overflow: hidden;
+    word-break: normal;
+
+    @media (min-width: 768px) {
+      max-width: 500px;
+    }
+  }
+}

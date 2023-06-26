@@ -8,3 +8,4 @@ export { default as Logo } from "./Logo";
 export { default as PrivateRoute } from "./PrivateRoute";
 export { default as SearchForm } from "./SearchForm";
 export { default as Loader } from "./Loader";
+export { default as ErrorBoundary } from "./ErrorBoundary";

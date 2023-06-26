@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import { ErrorBoundary } from "./components";
 import { router } from "./router";
 
 import esTranslation from "./locales/es.json";
@@ -25,5 +26,7 @@ i18n.use(initReactI18next).init({
 });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <RouterProvider router={router} />
+  <ErrorBoundary>
+    <RouterProvider router={router} />
+  </ErrorBoundary>
 );
