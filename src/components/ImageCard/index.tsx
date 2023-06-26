@@ -27,7 +27,7 @@ const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
           <Avatar height={35} seller={seller} />
         </picture>
 
-        <p className="m-0 author__name">
+        <p className="m-0 author__name" data-testid="seller-name">
           <small>{seller.name}</small>
         </p>
       </div>
@@ -38,7 +38,7 @@ const ImageCard = ({ seller, image = "" }: ImageCardProps) => {
           id={`big-heart-${seller.id}`}
         ></i>
 
-        <picture className="image__container">
+        <picture className="image__container" data-testid="photo">
           <img src={image} alt="image" onError={showDefaultImage} />
         </picture>
 
