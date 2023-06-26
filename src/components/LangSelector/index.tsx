@@ -13,6 +13,7 @@ const LangSelector = () => {
 
   return (
     <select
+      data-testid="lang-selector"
       className="lang-selector form-select ms-2"
       onChange={(event) => handleChangeLang(event.target.value)}
     >
