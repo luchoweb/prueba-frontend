@@ -13,9 +13,9 @@ const Error404Page = () => {
         <picture className="not-found__image">
           <img src={ImageError} alt="not found" height={150} />
         </picture>
-        <h2 className="mt-4 mb-2">Página no encontrada</h2>
-        <p className="m-0">La página que intentas ver no existe o fue eliminada.</p>
-        <p className="m-0 mb-4">Por favor vuelve al inicio e intentalo nuevamente.</p>
+        <h2 className="mt-4 mb-2">{t("not-found-title")}</h2>
+        <p className="m-0">{t("not-found-first-text")}</p>
+        <p className="m-0 mb-4">{t("not-found-second-text")}</p>
         <Link to="/" className="button button--dark">{t("back")}</Link>
       </section>
     </Layout>

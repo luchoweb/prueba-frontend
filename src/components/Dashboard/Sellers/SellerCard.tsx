@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { Avatar } from "../..";
 import { SellerCardProps } from "../../../types";
 
 const SellerCard = ({ seller }: SellerCardProps) => {
+  const { t } = useTranslation();
+
   const totalLikesToWin = 20;
   const currentLikes = parseInt(`${seller.observations}`) || 0;
   const likesToWin = totalLikesToWin - currentLikes;
@@ -18,14 +21,14 @@ const SellerCard = ({ seller }: SellerCardProps) => {
         <h5 className="seller-name m-0 mb-3">{seller.name}</h5>
 
         <p className="m-0 mb-2">
-          <strong>Progreso de Likes</strong>:
+          <strong>{t("likes-progress")}</strong>:
         </p>
 
         <div className="alert alert-light mb-0 p-2">
           <p className="seller-likes mb-0">
-          <strong>Obtenidos</strong>: {currentLikes}
+          <strong>{t("likes-earned")}</strong>: {currentLikes}
         </p>
-        <p className="m-0 mb-2"><strong>Pendientes</strong>: {likesToWin}</p>
+        <p className="m-0 mb-2"><strong>{t("remaining-likes")}</strong>: {likesToWin}</p>
 
         <div className="row align-items-center">
           <div className="col-10 col-lg-9 pe-0">

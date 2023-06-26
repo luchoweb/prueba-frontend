@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../hooks";
 
+import { LangSelector } from "..";
+
 import AppLogo from "../Logo";
 import "./styles.scss";
 
@@ -17,7 +19,7 @@ const Header = () => {
           <div className="col-7 col-md-6">
             <AppLogo />
           </div>
-          <div className="col-5 col-md-6 text-end">
+          <div className="col-5 col-md-6 d-flex align-items-center justify-content-end">
             {!hasLogged ? (
               <Link to="/login" className="button button--sm button--dark">
                 {t("login")}
@@ -35,6 +37,8 @@ const Header = () => {
                 )}
               </div>
             )}
+
+            <LangSelector />
           </div>
         </div>
       </div>

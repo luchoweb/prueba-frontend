@@ -25,5 +25,18 @@
   "invoices": "Facturas",
   "invoice": "Factura",
   "loading": "Cargando",
-  "sellers-not-found": "No hay vendedores registrados."
+  "sellers-not-found": "No hay vendedores registrados.",
+  "not-found-title": "Página no encontrada",
+  "not-found-first-text": "La página que intentas ver no existe o fue eliminada.",
+  "not-found-second-text": "Por favor vuelve al inicio e intentalo nuevamente.",
+  "error-boundery-title": "¡Ha ocurrido un error inesperado!",
+  "error-boundery-text": "Por favor recargue la página.",
+  "error-boundery-code-title": "Detalle técnico del error:",
+  "likes-progress": "Progreso de Likes",
+  "likes-earned": "Ganados",
+  "remaining-likes": "Faltantes",
+  "products": "Productos",
+  "product": "Producto",
+  "quantity": "Cantidad",
+  "qty": "Cant"
 }
