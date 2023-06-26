@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { signIn } from "../../services/firebase/auth";
-import { emailValidation } from "../../utils/regex";
+import { emailValidation } from "../../utils/validations";
 import { Logo } from "..";
 
 import "./styles.scss";
