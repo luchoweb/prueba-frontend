@@ -16,7 +16,7 @@
   git clone https://github.com/luchoweb/prueba-frontend.git
   ```
 - Nos movemos a la carpeta del proyecto:
-  ```cd prueba-alegra```
+  ```cd prueba-frontend```
 - Creamos el archivo `.env` con las siguientes variables(1):
   ```bash
   VITE_APP_NAME = "Imágenes del Mundo"
