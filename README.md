@@ -13,7 +13,7 @@
 ### Instalación ambiente local
 - Clonamos el repositorio
   ```bash
-  git clone https://github.com/luchoweb/prueba-alegra.git
+  git clone https://github.com/luchoweb/prueba-frontend.git
   ```
 - Nos movemos a la carpeta del proyecto:
   ```cd prueba-alegra```
