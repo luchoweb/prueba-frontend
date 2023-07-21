@@ -1,4 +1,4 @@
-# Alegra: Prueba Frontend
+# Prueba Frontend
 
 **Importante**: la aplicación se desarrolló teniendo algunos supuestos en cuenta, estos ayudan a omitir desarrollo que por temas de tiempo, principalmente, no habia podido implementar. Los enumero a continuación:
 
