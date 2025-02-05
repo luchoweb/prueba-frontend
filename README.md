@@ -1,5 +1,9 @@
 # Prueba Frontend
 
+![image](https://github.com/user-attachments/assets/c2077642-e73d-4bb5-966f-8ec61fe6ab13)
+
+---
+
 **Importante**: la aplicación se desarrolló teniendo algunos supuestos en cuenta, estos ayudan a omitir desarrollo que por temas de tiempo, principalmente, no habia podido implementar. Los enumero a continuación:
 
 1. Siempre serán 4 vendedores. No se realiza paginación.
